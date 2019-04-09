@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-               def ret = """${sh returnStdout: true, script: './startServer.sh'}"""
-               echo ret
+               environment{ H="""${sh returnStdout: true, script: './startServer.sh'}"""}
+               echo env.H
             }
         }
     }
