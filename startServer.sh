@@ -17,6 +17,6 @@ waitServerUp(){
 if [[ -f ${PID_FILE} ]];then
   exit 0
 fi
-cd hobbit-core; mvn spring-boot:run > /dev/null 2>&1 &
+mvn spring-boot:run > /dev/null 2>&1 &
 echo $! > ${PID_FILE}
 waitServerUp
