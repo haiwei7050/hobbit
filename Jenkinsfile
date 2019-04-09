@@ -16,7 +16,10 @@ pipeline {
     stages {
         stage('Example') {
             environment {
-                DEBUG_FLAGS = '-g'
+                ZHW = """${sh(
+                                      returnStdout: true,
+                                      script: './startServer.sh'
+                                  )}"""
             }
             steps {
                 sh 'printenv'
