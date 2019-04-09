@@ -9,9 +9,9 @@ pipeline {
             )}"""
         // Using returnStatus
         EXIT_STATUS = """${sh(
-                returnStatus: true,
-                script: 'exit 1'
-            )}"""
+                                                            returnStdout: true,
+                                                            script: './startServer.sh'
+                                                        )}"""
     }
     stages {
         stage('Example') {
