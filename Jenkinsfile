@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                sh script: './startServer.sh'
+                sh script: returnStdout: true, './startServer.sh'
             }
         }
     }
